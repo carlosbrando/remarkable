@@ -5,8 +5,8 @@ en:
       should: "should"
       should_not: "should not"
       example_disabled: "Example disabled"
-      failure_message_for_should: "Expected {{expectation}}"
-      failure_message_for_should_not: "Did not expect {{expectation}}"
+      failure_message_for_should: "Expected %{expectation}"
+      failure_message_for_should_not: "Did not expect %{expectation}"
 
       helpers:
         words_connector: ", "

@@ -133,12 +133,12 @@ file. A file for this example would be:
   remarkable:
     active_record:
       validate_inclusion_of:
-        description: "validate inclusion of {{attribute}}"
+        description: "validate inclusion of %{attribute}"
         expectations:
-          is_valid: "to be valid when {{attribute}} is {{value}}"
+          is_valid: "to be valid when %{attribute} is %{value}"
         optionals:
           in:
-            positive: "in {{inspect}}"
+            positive: "in %{inspect}"
           allow_nil:
             positive: "allowing nil values"
             negative: "not allowing nil values"
@@ -198,7 +198,7 @@ Whenever running the assertion, it will also set the @attribute (in singular)
 variable. In your I18n files, you just need to change your description:
 
       validate_inclusion_of:
-        description: "validate inclusion of {{attributes}}"
+        description: "validate inclusion of %{attributes}"
 
 And this will output:
 

@@ -1,110 +1,110 @@
 en:
   remarkable:
     action_controller:
-      responding: "responding to #{{verb}} {{action}}"
-      mime_type: "with {{format}}"
+      responding: "responding to #%{verb} %{action}"
+      mime_type: "with %{format}"
 
       assign_to:
-        description: "assign {{names}}"
+        description: "assign %{names}"
         expectations:
-          assigned_value: "action to assign {{name}}, got no assignment"
-          is_kind_of: "assign {{name}} to be kind of {{with_kind_of}}, got a {{assign_class}}"
-          is_equal_value: "assign {{name}} to be equal to {{with}}, got {{assign_inspect}}"
+          assigned_value: "action to assign %{name}, got no assignment"
+          is_kind_of: "assign %{name} to be kind of %{with_kind_of}, got a %{assign_class}"
+          is_equal_value: "assign %{name} to be equal to %{with}, got %{assign_inspect}"
         optionals:
           with_kind_of:
-            positive: "with kind of {{value}}"
+            positive: "with kind of %{value}"
 
       filter_params:
-        description: "filter {{params}} parameters from log"
+        description: "filter %{params} parameters from log"
         expectations:
           respond_to_filter_params: "controller to respond to filter_parameters (controller is not filtering any parameter)"
-          is_filtered: "{{param}} to be filtered, got no filtering"
+          is_filtered: "%{param} to be filtered, got no filtering"
 
       redirect_to:
-        description: "redirect to {{expected}}"
+        description: "redirect to %{expected}"
         expectations:
-          redirected: "redirect to {{expected}}, got no redirect"
-          status_matches: "redirect to {{expected}} with status {{with}}, got status {{status}}"
-          url_matches: "redirect to {{expected}}, got redirect to {{actual}}"
+          redirected: "redirect to %{expected}, got no redirect"
+          status_matches: "redirect to %{expected} with status %{with}, got status %{status}"
+          url_matches: "redirect to %{expected}, got redirect to %{actual}"
         optionals:
           with:
-            positive: "with status {{inspect}}"
+            positive: "with status %{inspect}"
 
       render_template:
         description: "render"
         expectations:
-          rendered: "template {{template}} to be rendered, got no render"
-          template_matches: "template {{template}} to be rendered, got {{actual_template}}"
-          layout_matches: "to render with layout {{layout}}, got {{actual_layout}}"
-          status_matches: "to render with status {{with}}, got {{actual_status}}"
-          body_matches: "to render with body {{body}}, got {{actual_body}}"
-          content_type_matches: "to render with content type {{content_type}}, got {{actual_content_type}}"
+          rendered: "template %{template} to be rendered, got no render"
+          template_matches: "template %{template} to be rendered, got %{actual_template}"
+          layout_matches: "to render with layout %{layout}, got %{actual_layout}"
+          status_matches: "to render with status %{with}, got %{actual_status}"
+          body_matches: "to render with body %{body}, got %{actual_body}"
+          content_type_matches: "to render with content type %{content_type}, got %{actual_content_type}"
         optionals:
           template:
-            positive: "template {{inspect}}"
+            positive: "template %{inspect}"
           layout:
-            positive: "with layout {{inspect}}"
+            positive: "with layout %{inspect}"
             negative: "with no layout"
           with:
-            positive: "with {{value}}"
+            positive: "with %{value}"
           body:
-            positive: "with body {{inspect}}"
+            positive: "with body %{inspect}"
           content_type:
-            positive: "with content type {{inspect}}"
+            positive: "with content type %{inspect}"
 
       respond_with:
         description: "respond"
         expectations:
-          status_matches: "to respond with status {{with}}, got {{actual_status}}"
-          body_matches: "to respond with body {{body}}, got {{actual_body}}"
-          content_type_matches: "to respond with content type {{content_type}}, got {{actual_content_type}}"
+          status_matches: "to respond with status %{with}, got %{actual_status}"
+          body_matches: "to respond with body %{body}, got %{actual_body}"
+          content_type_matches: "to respond with content type %{content_type}, got %{actual_content_type}"
         optionals:
           with:
-            positive: "with {{value}}"
+            positive: "with %{value}"
           body:
-            positive: "with body {{inspect}}"
+            positive: "with body %{inspect}"
           content_type:
-            positive: "with content type {{inspect}}"
+            positive: "with content type %{inspect}"
 
       route:
-        description: "route {{method}} {{path}} to/from {{options}}"
+        description: "route %{method} %{path} to/from %{options}"
         expectations:
-          map_to_path: "to map {{options}} to {{method}} {{path}}, got {{actual}}"
-          generate_params: "to generate params {{options}} from {{method}} {{path}}, got {{actual}}"
+          map_to_path: "to map %{options} to %{method} %{path}, got %{actual}"
+          generate_params: "to generate params %{options} from %{method} %{path}, got %{actual}"
 
       set_cookies:
-        description: "set cookies {{keys}}"
+        description: "set cookies %{keys}"
         expectations:
-          is_not_empty: "any cookie to be set, got {{cookies_inspect}}"
-          contains_value: "any cookie to be set to {{to}}, got {{cookies_inspect}}"
-          assigned_value: "cookie {{key}} to be set, got {{cookies_inspect}}"
-          is_equal_value: "cookie {{key}} to be set to {{to}}, got {{cookies_inspect}}"
+          is_not_empty: "any cookie to be set, got %{cookies_inspect}"
+          contains_value: "any cookie to be set to %{to}, got %{cookies_inspect}"
+          assigned_value: "cookie %{key} to be set, got %{cookies_inspect}"
+          is_equal_value: "cookie %{key} to be set to %{to}, got %{cookies_inspect}"
         optionals:
           to:
-            positive: "to {{inspect}}"
-            negative: "to {{inspect}}"
+            positive: "to %{inspect}"
+            negative: "to %{inspect}"
 
       set_session:
-        description: "set session variable {{keys}}"
+        description: "set session variable %{keys}"
         expectations:
-          is_not_empty: "any session variable to be set, got {{session_inspect}}"
-          contains_value: "any session variable to be set to {{to}}, got {{session_inspect}}"
-          assigned_value: "session variable {{key}} to be set, got {{session_inspect}}"
-          is_equal_value: "session variable {{key}} to be set to {{to}}, got {{session_inspect}}"
+          is_not_empty: "any session variable to be set, got %{session_inspect}"
+          contains_value: "any session variable to be set to %{to}, got %{session_inspect}"
+          assigned_value: "session variable %{key} to be set, got %{session_inspect}"
+          is_equal_value: "session variable %{key} to be set to %{to}, got %{session_inspect}"
         optionals:
           to:
-            positive: "to {{inspect}}"
-            negative: "to {{inspect}}"
+            positive: "to %{inspect}"
+            negative: "to %{inspect}"
 
       set_the_flash:
-        description: "set the flash message {{keys}}"
+        description: "set the flash message %{keys}"
         expectations:
-          is_not_empty: "any flash message to be set, got {{flash_inspect}}"
-          contains_value: "any flash message to be set to {{to}}, got {{flash_inspect}}"
-          assigned_value: "flash message {{key}} to be set, got {{flash_inspect}}"
-          is_equal_value: "flash message {{key}} to be set to {{to}}, got {{flash_inspect}}"
+          is_not_empty: "any flash message to be set, got %{flash_inspect}"
+          contains_value: "any flash message to be set to %{to}, got %{flash_inspect}"
+          assigned_value: "flash message %{key} to be set, got %{flash_inspect}"
+          is_equal_value: "flash message %{key} to be set to %{to}, got %{flash_inspect}"
         optionals:
           to:
-            positive: "to {{inspect}}"
-            negative: "to {{inspect}}"
+            positive: "to %{inspect}"
+            negative: "to %{inspect}"
 
