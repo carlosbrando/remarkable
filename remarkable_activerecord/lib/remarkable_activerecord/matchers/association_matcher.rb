@@ -94,7 +94,7 @@ module Remarkable
           end
 
           def reflection_foreign_key
-            reflection.primary_key_name.to_s
+            (reflection.respond_to?(:foreign_key) ? reflection.foreign_key : reflection.primary_key_name).to_s
           end
 
           def table_has_column?(klass, table_name, column)
