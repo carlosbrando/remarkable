@@ -175,7 +175,7 @@ module Remarkable
         #   Using the underlying mechanism inside DataMapper makes us free from
         #   all those errors.
         #
-        # We replace {{count}} interpolation for 12345 which later is replaced
+        # We replace %{count} interpolation for 12345 which later is replaced
         # by a regexp which contains \d+.
         #
         def error_message_from_model(model, attribute, message) #:nodoc:

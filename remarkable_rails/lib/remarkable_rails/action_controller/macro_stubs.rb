@@ -363,8 +363,8 @@ module Remarkable
         #   locale:
         #     remarkable:
         #       action_controller:
-        #         responding: "responding to #{{verb}} {{action}}"
-        #         mime_type: "with {{format}} ({{content_type}})"
+        #         responding: "responding to #%{verb} %{action}"
+        #         mime_type: "with %{format} (%{content_type})"
         #
         # And load the locale file with:
         #
@@ -379,7 +379,7 @@ module Remarkable
             verb   = verb.to_s
 
             description = Remarkable.t 'remarkable.action_controller.responding',
-                                        :default => "responding to \#{{verb}} {{action}}",
+                                        :default => "responding to \#%{verb} %{action}",
                                         :verb => verb.sub('!', '').upcase, :action => action
 
             send_args = [ verb, action, options ]

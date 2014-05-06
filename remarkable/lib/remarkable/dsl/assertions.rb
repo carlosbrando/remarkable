@@ -101,11 +101,11 @@ module Remarkable
           #   class InRange < Remarkable::Base
           #     arguments :range, :collection => :names, :as => :name
           #
-          # You will have {{range}}, {{names}} and {{name}} available for I18n
+          # You will have %{range}, %{names} and %{name} available for I18n
           # messages:
           #
           #   in_range:
-          #     description: "have {{names}} to be on range {{range}}"
+          #     description: "have %{names} to be on range %{range}"
           #
           # Before a collection is sent to I18n, it's transformed to a sentence.
           # So if the following matcher:
@@ -216,13 +216,13 @@ module Remarkable
           # case, the error message would be on:
           #
           #   included:
-          #     description: "check {{value}} is included in the array"
+          #     description: "check %{value} is included in the array"
           #     expectations:
-          #       is_included: "{{value}} is included in the array"
+          #       is_included: "%{value} is included in the array"
           #
           # In case of failure, it will output:
           #
-          #   "Expected {{value}} is included in the array"
+          #   "Expected %{value} is included in the array"
           #
           # Notice that on the yml file the question mark is removed for readability.
           #

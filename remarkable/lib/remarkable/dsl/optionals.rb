@@ -48,10 +48,10 @@ module Remarkable
     # properly on your locale file. If you have a validate_uniqueness_of
     # matcher with the following on your locale file:
     #
-    #   description: validate uniqueness of {{attributes}}
+    #   description: validate uniqueness of %{attributes}
     #   optionals:
     #     scope:
-    #       positive: scoped to {{inspect}}
+    #       positive: scoped to %{inspect}
     #     case_sensitive:
     #       positive: case sensitive
     #       negative: case insensitive
@@ -70,7 +70,7 @@ module Remarkable
     # == Interpolation options
     #
     # The default interpolation options available are "inspect" and "value". Whenever
-    # you use :splat => true, it also adds a new interpolation option called {{sentence}}.
+    # you use :splat => true, it also adds a new interpolation option called %{sentence}.
     #
     # Given the following matcher call:
     #
@@ -79,13 +79,13 @@ module Remarkable
     # The following yml setting and outputs are:
     #
     #    scope:
-    #      positive: scoped to {{inspect}}
+    #      positive: scoped to %{inspect}
     #      # Outputs: "validate uniqueness of project_id scoped to [ :company_id, :project_id ]"
     #
-    #      positive: scoped to {{value}}
+    #      positive: scoped to %{value}
     #      # Outputs: "validate uniqueness of project_id scoped to company_idproject_id"
     #
-    #      positive: scoped to {{value}}
+    #      positive: scoped to %{value}
     #      # Outputs: "validate uniqueness of project_id scoped to company_id and project_id"
     #
     # == Interpolation keys

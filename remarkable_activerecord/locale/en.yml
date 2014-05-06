@@ -2,12 +2,12 @@ en:
   remarkable:
     active_record:
       describe:
-        each: "{{key}} is {{value}}"
+        each: "%{key} is %{value}"
         prepend: "when "
         connector: " and "
       expectations:
-        allow_nil: "{{subject_name}} to {{not}}allow nil values for {{attribute}}"
-        allow_blank: "{{subject_name}} to {{not}}allow blank values for {{attribute}}"
+        allow_nil: "%{subject_name} to %{not}allow nil values for %{attribute}"
+        allow_blank: "%{subject_name} to %{not}allow blank values for %{attribute}"
       optionals:
         allow_nil:
           positive: "allowing nil values"
@@ -17,71 +17,71 @@ en:
           negative: "not allowing blank values"
 
       accept_nested_attributes_for:
-        description: "accept nested attributes for {{associations}}"
+        description: "accept nested attributes for %{associations}"
         expectations:
-          association_exists: "{{subject_name}} to have association {{association}}, but does not"
-          is_autosave: "{{subject_name}} to have association {{association}} with autosave true, got false"
-          responds_to_attributes: "{{subject_name}} to respond to :{{association}}_attributes=, but does not"
-          allows_destroy: "{{subject_name}} with allow destroy equals to {{allow_destroy}}, got {{actual}}"
-          accepts: "{{subject_name}} to accept attributes {{attributes}} for {{association}}, but does not"
-          rejects: "{{subject_name}} to reject attributes {{attributes}} for {{association}}, but does not"
+          association_exists: "%{subject_name} to have association %{association}, but does not"
+          is_autosave: "%{subject_name} to have association %{association} with autosave true, got false"
+          responds_to_attributes: "%{subject_name} to respond to :%{association}_attributes=, but does not"
+          allows_destroy: "%{subject_name} with allow destroy equals to %{allow_destroy}, got %{actual}"
+          accepts: "%{subject_name} to accept attributes %{attributes} for %{association}, but does not"
+          rejects: "%{subject_name} to reject attributes %{attributes} for %{association}, but does not"
         optionals:
           allow_destroy:
             positive: "allowing destroy"
             negative: "not allowing destroy"
           accept:
-            positive: "accepting {{sentence}}"
+            positive: "accepting %{sentence}"
           reject:
-            positive: "rejecting {{sentence}}"
+            positive: "rejecting %{sentence}"
 
       allow_values_for:
-        description: "allow {{in}} as values for {{attributes}}"
+        description: "allow %{in} as values for %{attributes}"
         expectations:
-          is_valid: "{{subject_name}} to be valid when {{attribute}} is set to {{value}}"
+          is_valid: "%{subject_name} to be valid when %{attribute} is set to %{value}"
 
       allow_mass_assignment_of:
-        description: "allow mass assignment of {{attributes}}"
+        description: "allow mass assignment of %{attributes}"
         expectations:
-          allows: "{{subject_name}} to allow mass assignment ({{subject_name}} is protecting {{protected_attributes}})"
-          is_protected: "{{subject_name}} to allow mass assignment of {{attribute}} ({{subject_name}} is protecting {{attribute}})"
-          is_accessible: "{{subject_name}} to allow mass assignment of {{attribute}} ({{subject_name}} has not made {{attribute}} accessible)"
+          allows: "%{subject_name} to allow mass assignment (%{subject_name} is protecting %{protected_attributes})"
+          is_protected: "%{subject_name} to allow mass assignment of %{attribute} (%{subject_name} is protecting %{attribute})"
+          is_accessible: "%{subject_name} to allow mass assignment of %{attribute} (%{subject_name} has not made %{attribute} accessible)"
         negative_expectations:
-          allows: "{{subject_name}} to allow mass assignment ({{subject_name}} made {{accessible_attributes}} accessible)"
-          is_protected: "{{subject_name}} to allow mass assignment of {{attribute}} ({{subject_name}} is not protecting {{attribute}})"
-          is_accessible: "{{subject_name}} to allow mass assignment of {{attribute}} ({{subject_name}} has made {{attribute}} accessible)"
+          allows: "%{subject_name} to allow mass assignment (%{subject_name} made %{accessible_attributes} accessible)"
+          is_protected: "%{subject_name} to allow mass assignment of %{attribute} (%{subject_name} is not protecting %{attribute})"
+          is_accessible: "%{subject_name} to allow mass assignment of %{attribute} (%{subject_name} has made %{attribute} accessible)"
 
       association:
         belongs_to: belong to
         has_many: have many
         has_and_belongs_to_many: have and belong to many
         has_one: have one
-        description: "{{macro}} {{associations}}"
+        description: "%{macro} %{associations}"
         expectations:
-          association_exists: "{{subject_name}} records {{macro}} {{association}}, but the association does not exist"
-          macro_matches: "{{subject_name}} records {{macro}} {{association}}, got {{subject_name}} records {{actual_macro}} {{association}}"
-          through_exists: "{{subject_name}} records {{macro}} {{association}} through {{through}}, through association does not exist"
-          source_exists: "{{subject_name}} records {{macro}} {{association}} through {{through}}, source association does not exist"
-          klass_exists: "{{subject_name}} records {{macro}} {{association}}, but the association class does not exist"
-          join_table_exists: "join table {{join_table}} to exist, but does not"
-          foreign_key_exists: "foreign key {{foreign_key}} to exist on {{foreign_key_table}}, but does not"
-          polymorphic_exists: "{{subject_table}} to have {{polymorphic_column}} as column, but does not"
-          counter_cache_exists: "{{reflection_table}} to have {{counter_cache_column}} as column, but does not"
-          options_match: "{{subject_name}} records {{macro}} {{association}} with options {{options}}, got {{actual}}"
+          association_exists: "%{subject_name} records %{macro} %{association}, but the association does not exist"
+          macro_matches: "%{subject_name} records %{macro} %{association}, got %{subject_name} records %{actual_macro} %{association}"
+          through_exists: "%{subject_name} records %{macro} %{association} through %{through}, through association does not exist"
+          source_exists: "%{subject_name} records %{macro} %{association} through %{through}, source association does not exist"
+          klass_exists: "%{subject_name} records %{macro} %{association}, but the association class does not exist"
+          join_table_exists: "join table %{join_table} to exist, but does not"
+          foreign_key_exists: "foreign key %{foreign_key} to exist on %{foreign_key_table}, but does not"
+          polymorphic_exists: "%{subject_table} to have %{polymorphic_column} as column, but does not"
+          counter_cache_exists: "%{reflection_table} to have %{counter_cache_column} as column, but does not"
+          options_match: "%{subject_name} records %{macro} %{association} with options %{options}, got %{actual}"
         optionals:
           through:
-            positive: "through {{value}}"
+            positive: "through %{value}"
           source:
-            positive: "with source {{inspect}}"
+            positive: "with source %{inspect}"
           source_type:
-            positive: "with source type {{inspect}}"
+            positive: "with source type %{inspect}"
           class_name:
-            positive: "with class name {{inspect}}"
+            positive: "with class name %{inspect}"
           foreign_key:
-            positive: "with foreign key {{inspect}}"
+            positive: "with foreign key %{inspect}"
           dependent:
-            positive: "with dependent {{inspect}}"
+            positive: "with dependent %{inspect}"
           join_table:
-            positive: "with join table {{inspect}}"
+            positive: "with join table %{inspect}"
           uniq:
             positive: "with unique records"
             negative: "without unique records"
@@ -95,136 +95,136 @@ en:
             positive: "autosaving associated records"
             negative: "not autosaving associated records"
           as:
-            positive: "through the polymorphic interface {{inspect}}"
+            positive: "through the polymorphic interface %{inspect}"
           counter_cache:
-            positive: "with counter cache {{inspect}}"
+            positive: "with counter cache %{inspect}"
             negative: "without counter cache"
           select:
-            positive: "selecting {{inspect}}"
+            positive: "selecting %{inspect}"
           conditions:
-            positive: "with conditions {{inspect}}"
+            positive: "with conditions %{inspect}"
           include:
-            positive: "including {{inspect}}"
+            positive: "including %{inspect}"
           group:
-            positive: "grouping by {{inspect}}"
+            positive: "grouping by %{inspect}"
           having:
-            positive: "having {{inspect}}"
+            positive: "having %{inspect}"
           order:
-            positive: "with order {{inspect}}"
+            positive: "with order %{inspect}"
           limit:
-            positive: "with limit {{inspect}}"
+            positive: "with limit %{inspect}"
           offset:
-            positive: "with offset {{inspect}}"
+            positive: "with offset %{inspect}"
 
       have_column:
-        description: "have column(s) named {{columns}}"
+        description: "have column(s) named %{columns}"
         expectations:
-          column_exists: "{{subject_name}} to have column named {{column}}"
-          options_match: "{{subject_name}} to have column {{column}} with options {{options}}, got {{actual}}"
+          column_exists: "%{subject_name} to have column named %{column}"
+          options_match: "%{subject_name} to have column %{column} with options %{options}, got %{actual}"
         optionals:
           type:
-            positive: "with type {{inspect}}"
+            positive: "with type %{inspect}"
           null:
             positive: "allowing null values"
             negative: "not allowing null values"
           default:
-            positive: "with default value {{inspect}}"
-            negative: "with default value {{inspect}}"
+            positive: "with default value %{inspect}"
+            negative: "with default value %{inspect}"
           limit:
-            positive: "with limit {{inspect}}"
+            positive: "with limit %{inspect}"
 
       have_default_scope:
-        description: "have a default scope with {{options}}"
+        description: "have a default scope with %{options}"
         expectations:
-          options_match: "default scope with {{options}}, got {{actual}}"
+          options_match: "default scope with %{options}, got %{actual}"
 
       have_index:
-        description: "have index for column(s) {{columns}}"
+        description: "have index for column(s) %{columns}"
         expectations:
-          index_exists: "index {{column}} to exist on table {{table_name}}"
-          is_unique: "index on {{column}} with unique equals to {{unique}}, got {{actual}}"
+          index_exists: "index %{column} to exist on table %{table_name}"
+          is_unique: "index on %{column} with unique equals to %{unique}, got %{actual}"
         optionals:
           unique:
             positive: "with unique values"
             negative: "with non unique values"
           table_name:
-            positive: "on table {{value}}"
+            positive: "on table %{value}"
 
       have_readonly_attributes:
-        description: "make {{attributes}} read-only"
+        description: "make %{attributes} read-only"
         expectations:
-          is_readonly: "{{subject_name}} to make {{attribute}} read-only, got {{actual}}"
+          is_readonly: "%{subject_name} to make %{attribute} read-only, got %{actual}"
 
       have_scope:
-        description: "have to scope itself to {{options}} when {{scope_name}} is called"
+        description: "have to scope itself to %{options} when %{scope_name} is called"
         expectations:
-          is_scope: "{{scope_name}} when called on {{subject_name}} return an instance of ActiveRecord::NamedScope::Scope"
-          options_match: "{{scope_name}} when called on {{subject_name}} scope to {{options}}, got {{actual}}"
+          is_scope: "%{scope_name} when called on %{subject_name} return an instance of ActiveRecord::NamedScope::Scope"
+          options_match: "%{scope_name} when called on %{subject_name} scope to %{options}, got %{actual}"
         optionals:
           with:
-            positive: "with {{inspect}} as argument"
+            positive: "with %{inspect} as argument"
 
       validate_acceptance_of:
-        description: "require {{attributes}} to be accepted"
+        description: "require %{attributes} to be accepted"
         expectations:
-          requires_acceptance: "{{subject_name}} to be invalid if {{attribute}} is not accepted"
-          accept_is_valid: "{{subject_name}} to be valid when {{attribute}} is accepted with value {{accept}}"
+          requires_acceptance: "%{subject_name} to be invalid if %{attribute} is not accepted"
+          accept_is_valid: "%{subject_name} to be valid when %{attribute} is accepted with value %{accept}"
         optionals:
           accept:
-            positive: "with value {{inspect}}"
+            positive: "with value %{inspect}"
 
       validate_associated:
-        description: "require associated {{associations}} to be valid"
+        description: "require associated %{associations} to be valid"
         expectations:
-          is_valid: "{{subject_name}} to be invalid when {{association}} is invalid"
+          is_valid: "%{subject_name} to be invalid when %{association} is invalid"
 
       validate_confirmation_of:
-        description: "require {{attributes}} to be confirmed"
+        description: "require %{attributes} to be confirmed"
         expectations:
-          responds_to_confirmation: "{{subject_name}} instance responds to {{attribute}}_confirmation"
-          confirms: "{{subject_name}} to be valid only when {{attribute}} is confirmed"
+          responds_to_confirmation: "%{subject_name} instance responds to %{attribute}_confirmation"
+          confirms: "%{subject_name} to be valid only when %{attribute} is confirmed"
 
       validate_exclusion_of:
-        description: "ensure exclusion of {{attributes}} in {{in}}"
+        description: "ensure exclusion of %{attributes} in %{in}"
         expectations:
-          is_valid: "{{subject_name}} to be valid when {{attribute}} is set to {{value}}"
-          is_invalid: "{{subject_name}} to be invalid when {{attribute}} is set to {{value}}"
+          is_valid: "%{subject_name} to be valid when %{attribute} is set to %{value}"
+          is_invalid: "%{subject_name} to be invalid when %{attribute} is set to %{value}"
 
       validate_inclusion_of:
-        description: "ensure inclusion of {{attributes}} in {{in}}"
+        description: "ensure inclusion of %{attributes} in %{in}"
         expectations:
-          is_valid: "{{subject_name}} to be valid when {{attribute}} is set to {{value}}"
-          is_invalid: "{{subject_name}} to be invalid when {{attribute}} is set to {{value}}"
+          is_valid: "%{subject_name} to be valid when %{attribute} is set to %{value}"
+          is_invalid: "%{subject_name} to be invalid when %{attribute} is set to %{value}"
 
       validate_length_of:
-        description: "ensure length of {{attributes}}"
+        description: "ensure length of %{attributes}"
         expectations:
-          less_than_min_length: "{{subject_name}} to be invalid when {{attribute}} length is less than {{minimum}} characters"
-          exactly_min_length: "{{subject_name}} to be valid when {{attribute}} length is {{minimum}} characters"
-          more_than_max_length: "{{subject_name}} to be invalid when {{attribute}} length is more than {{maximum}} characters"
-          exactly_max_length: "{{subject_name}} to be valid when {{attribute}} length is {{maximum}} characters"
+          less_than_min_length: "%{subject_name} to be invalid when %{attribute} length is less than %{minimum} characters"
+          exactly_min_length: "%{subject_name} to be valid when %{attribute} length is %{minimum} characters"
+          more_than_max_length: "%{subject_name} to be invalid when %{attribute} length is more than %{maximum} characters"
+          exactly_max_length: "%{subject_name} to be valid when %{attribute} length is %{maximum} characters"
         optionals:
           within:
-            positive: "is within {{inspect}} characters"
+            positive: "is within %{inspect} characters"
           maximum:
-            positive: "is maximum {{inspect}} characters"
+            positive: "is maximum %{inspect} characters"
           minimum:
-            positive: "is minimum {{inspect}} characters"
+            positive: "is minimum %{inspect} characters"
           is:
-            positive: "is equal to {{inspect}} characters"
+            positive: "is equal to %{inspect} characters"
           with_kind_of:
-            positive: "with kind of {{value}}"
+            positive: "with kind of %{value}"
 
       validate_numericality_of:
-        description: "ensure numericality of {{attributes}}"
+        description: "ensure numericality of %{attributes}"
         expectations:
-          only_numeric_values: "{{subject_name}} to allow only numeric values for {{attribute}}"
-          only_integer: "{{subject_name}} to {{not}}allow only integer values for {{attribute}}"
-          only_even: "{{subject_name}} to allow only even values for {{attribute}}"
-          only_odd: "{{subject_name}} to allow only odd values for {{attribute}}"
-          equals_to: "{{subject_name}} to be valid only when {{attribute}} is equal to {{count}}"
-          more_than_maximum: "{{subject_name}} to be invalid when {{attribute}} is greater than {{count}}"
-          less_than_minimum: "{{subject_name}} to be invalid when {{attribute}} is less than {{count}}"
+          only_numeric_values: "%{subject_name} to allow only numeric values for %{attribute}"
+          only_integer: "%{subject_name} to %{not}allow only integer values for %{attribute}"
+          only_even: "%{subject_name} to allow only even values for %{attribute}"
+          only_odd: "%{subject_name} to allow only odd values for %{attribute}"
+          equals_to: "%{subject_name} to be valid only when %{attribute} is equal to %{count}"
+          more_than_maximum: "%{subject_name} to be invalid when %{attribute} is greater than %{count}"
+          less_than_minimum: "%{subject_name} to be invalid when %{attribute} is less than %{count}"
         optionals:
           only_integer:
             positive: "allowing only integer values"
@@ -233,31 +233,31 @@ en:
           even:
             positive: "allowing only even values"
           equal_to:
-            positive: "is equal to {{inspect}}"
+            positive: "is equal to %{inspect}"
           less_than:
-            positive: "is less than {{inspect}}"
+            positive: "is less than %{inspect}"
           greater_than:
-            positive: "is greater than {{inspect}}"
+            positive: "is greater than %{inspect}"
           less_than_or_equal_to:
-            positive: "is less than or equal to {{inspect}}"
+            positive: "is less than or equal to %{inspect}"
           greater_than_or_equal_to:
-            positive: "is greater than or equal to {{inspect}}"
+            positive: "is greater than or equal to %{inspect}"
 
       validate_presence_of:
-        description: "require {{attributes}} to be set"
+        description: "require %{attributes} to be set"
         expectations:
-          allow_nil: "{{subject_name}} to require {{attribute}} to be set"
+          allow_nil: "%{subject_name} to require %{attribute} to be set"
 
       validate_uniqueness_of:
-        description: "require unique values for {{attributes}}"
+        description: "require unique values for %{attributes}"
         expectations:
-          responds_to_scope: "{{subject_name}} instance responds to {{method}}"
-          is_unique: "{{subject_name}} to require unique values for {{attribute}}"
-          case_sensitive: "{{subject_name}} to {{not}}be case sensitive on {{attribute}} validation"
-          valid_with_new_scope: "{{subject_name}} to be valid when {{attribute}} scope ({{method}}) change"
+          responds_to_scope: "%{subject_name} instance responds to %{method}"
+          is_unique: "%{subject_name} to require unique values for %{attribute}"
+          case_sensitive: "%{subject_name} to %{not}be case sensitive on %{attribute} validation"
+          valid_with_new_scope: "%{subject_name} to be valid when %{attribute} scope (%{method}) change"
         optionals:
           scope:
-            positive: "scoped to {{sentence}}"
+            positive: "scoped to %{sentence}"
           case_sensitive:
             positive: "case sensitive"
             negative: "case insensitive"

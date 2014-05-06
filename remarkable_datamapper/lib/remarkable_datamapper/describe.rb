@@ -33,7 +33,7 @@ module Remarkable
     #     remarkable:
     #       data_mapper:
     #         describe:
-    #           each: "{{key}} is {{value}}"
+    #           each: "%{key} is %{value}"
     #           prepend: "when "
     #           connector: " and "
     #
@@ -98,7 +98,7 @@ module Remarkable
         #     remarkable:
         #       data_mapper:
         #         describe:
-        #           each: "{{key}} is {{value}}"
+        #           each: "%{key} is %{value}"
         #           prepend: "when "
         #           connector: " and "
         #
@@ -126,7 +126,7 @@ module Remarkable
               end
 
               pieces << Remarkable.t("remarkable.data_mapper.describe.each",
-                                      :default => "{{key}} is {{value}}",
+                                      :default => "%{key} is %{value}",
                                       :key => translated_key.downcase, :value => value.inspect)
             end
 

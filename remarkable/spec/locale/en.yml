@@ -8,18 +8,18 @@ en:
       contain:
         description: "contain the given values"
       single_contain:
-        description: "contain {{value}}"
+        description: "contain %{value}"
         optionals:
           allow_nil:
             positive: "allowing nil"
             negative: "not allowing nil"
           allow_blank:
-            positive: "with blank equal {{inspect}}"
+            positive: "with blank equal %{inspect}"
             not_given: "not checking for blank"
           values:
-            positive: "values equal to {{sentence}}"
+            positive: "values equal to %{sentence}"
       collection_contain:
-        description: "contain {{values}}"
+        description: "contain %{values}"
         expectations:
-          included: "{{more}}{{value}} is included in {{subject_inspect}}"
-          is_array?: "subject is a array, but got {{subject_name}}"
+          included: "%{more}%{value} is included in %{subject_inspect}"
+          is_array?: "subject is a array, but got %{subject_name}"
